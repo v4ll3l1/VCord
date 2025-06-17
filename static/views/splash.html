@@ -49,7 +49,7 @@
             alt="shiggy"
             role="presentation"
         />
-        <p>Loading Vesktop...</p>
+        <p>Loading VCord...</p>
         <p class="message"></p>
     </div>
 </body>
@@ -57,7 +57,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const messageElement = document.querySelector('.message');
-        VesktopSplashNative.onUpdateMessage(message => {
+        VCordSplashNative.onUpdateMessage(message => {
             messageElement.textContent = message;
         })
     });

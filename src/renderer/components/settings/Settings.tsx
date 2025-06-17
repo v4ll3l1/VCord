@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * VCord, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -59,7 +59,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "staticTitle",
             title: "Static Title",
-            description: 'Makes the window title "Vesktop" instead of changing to the current page',
+            description: 'Makes the window title "VCord" instead of changing to the current page',
             defaultValue: false
         },
         {
@@ -73,7 +73,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
             key: "enableSplashScreen",
             title: "Enable Splash Screen",
             description:
-                "Shows a small splash screen while Vesktop is loading. Disabling this option will show the main window earlier while it's still loading.",
+                "Shows a small splash screen while VCord is loading. Disabling this option will show the main window earlier while it's still loading.",
             defaultValue: true
         },
         {
@@ -88,14 +88,14 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "tray",
             title: "Tray Icon",
-            description: "Add a tray icon for Vesktop",
+            description: "Add a tray icon for VCord",
             defaultValue: true,
             invisible: () => isMac
         },
         {
             key: "minimizeToTray",
             title: "Minimize to tray",
-            description: "Hitting X will make Vesktop minimize to the tray instead of closing",
+            description: "Hitting X will make VCord minimize to the tray instead of closing",
             defaultValue: true,
             invisible: () => isMac,
             disabled: () => Settings.store.tray === false
@@ -103,7 +103,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "clickTrayToShowHide",
             title: "Hide/Show on tray click",
-            description: "Left clicking tray icon will toggle the vesktop window visibility.",
+            description: "Left clicking tray icon will toggle the vcord window visibility.",
             defaultValue: false
         },
         {
@@ -131,7 +131,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "openLinksWithElectron",
             title: "Open Links in app (experimental)",
-            description: "Opens links in a new Vesktop window instead of your web browser",
+            description: "Opens links in a new VCord window instead of your web browser",
             defaultValue: false
         }
     ],
@@ -182,7 +182,7 @@ export default ErrorBoundary.wrap(
                 {/* FIXME: Outdated type */}
                 {/* @ts-expect-error Outdated type */}
                 <Text variant="heading-xl/semibold" color="header-primary" className="vcd-settings-title">
-                    Vesktop Settings
+                    VCord Settings
                 </Text>
                 <SettingsSections />
             </Forms.FormSection>
@@ -190,6 +190,6 @@ export default ErrorBoundary.wrap(
     },
     {
         message:
-            "Failed to render the Vesktop Settings tab. If this issue persists, try to right click the Vesktop tray icon, then click 'Repair Vencord'. And make sure your Vesktop is up to date."
+            "Failed to render the VCord Settings tab. If this issue persists, try to right click the VCord tray icon, then click 'Repair Vencord'. And make sure your VCord is up to date."
     }
 );

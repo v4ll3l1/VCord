@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * VCord, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -102,7 +102,7 @@ function initTray(win: BrowserWindow) {
             }
         },
         {
-            label: "Reset Vesktop",
+            label: "Reset VCord",
             async click() {
                 await clearData(win);
             }
@@ -127,15 +127,15 @@ function initTray(win: BrowserWindow) {
     ]);
 
     tray = new Tray(ICON_PATH);
-    tray.setToolTip("Vesktop");
+    tray.setToolTip("VCord");
     tray.setContextMenu(trayMenu);
     tray.on("click", onTrayClick);
 }
 
 async function clearData(win: BrowserWindow) {
     const { response } = await dialog.showMessageBox(win, {
-        message: "Are you sure you want to reset Vesktop?",
-        detail: "This will log you out, clear caches and reset all your settings!\n\nVesktop will automatically restart after this operation.",
+        message: "Are you sure you want to reset VCord?",
+        detail: "This will log you out, clear caches and reset all your settings!\n\nVCord will automatically restart after this operation.",
         buttons: ["Yes", "No"],
         cancelId: MessageBoxChoice.Cancel,
         defaultId: MessageBoxChoice.Default,
@@ -164,7 +164,7 @@ function initMenuBar(win: BrowserWindow) {
 
     const subMenu = [
         {
-            label: "About Vesktop",
+            label: "About VCord",
             click: createAboutWindow
         },
         {
@@ -174,14 +174,14 @@ function initMenuBar(win: BrowserWindow) {
                 app.relaunch();
                 app.quit();
             },
-            toolTip: "Vesktop will automatically restart after this operation"
+            toolTip: "VCord will automatically restart after this operation"
         },
         {
-            label: "Reset Vesktop",
+            label: "Reset VCord",
             async click() {
                 await clearData(win);
             },
-            toolTip: "Vesktop will automatically restart after this operation"
+            toolTip: "VCord will automatically restart after this operation"
         },
         {
             label: "Relaunch",
@@ -248,7 +248,7 @@ function initMenuBar(win: BrowserWindow) {
 
     const menuItems = [
         {
-            label: "Vesktop",
+            label: "VCord",
             role: "appMenu",
             submenu: subMenu.filter(isTruthy)
         },
@@ -404,7 +404,7 @@ function initStaticTitle(win: BrowserWindow) {
 
     addSettingsListener("staticTitle", enabled => {
         if (enabled) {
-            win.setTitle("Vesktop");
+            win.setTitle("VCord");
             win.on("page-title-updated", listener);
         } else {
             win.off("page-title-updated", listener);
@@ -456,7 +456,7 @@ function createMainWindow() {
             transparencyOption !== "none" && {
                 transparent: true
             }),
-        ...(staticTitle && { title: "Vesktop" }),
+        ...(staticTitle && { title: "VCord" }),
         ...(process.platform === "darwin" && getDarwinOptions()),
         ...getWindowBoundsOptions(),
         autoHideMenuBar: enableMenu

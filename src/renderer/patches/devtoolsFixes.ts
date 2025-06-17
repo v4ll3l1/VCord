@@ -1,6 +1,6 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
- * Copyright (c) 2025 Vendicated and Vesktop contributors
+ * VCord, a desktop app aiming to give you a snappier Discord Experience
+ * Copyright (c) 2025 Vendicated and VCord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
@@ -33,7 +33,7 @@ addPatch({
                 {
                     // eslint-disable-next-line no-useless-escape
                     match: /\b\i\.window\.setDevtoolsCallbacks/g,
-                    replace: "VesktopNative.win.setDevtoolsCallbacks"
+                    replace: "VCordNative.win.setDevtoolsCallbacks"
                 }
             ]
         }

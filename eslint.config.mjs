@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * VCord, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -8,11 +8,11 @@
 
 import stylistic from "@stylistic/eslint-plugin";
 import pathAlias from "eslint-plugin-path-alias";
+import prettier from "eslint-plugin-prettier";
 import simpleHeader from "eslint-plugin-simple-header";
 import importSort from "eslint-plugin-simple-import-sort";
 import unusedImports from "eslint-plugin-unused-imports";
 import tseslint from "typescript-eslint";
-import prettier from "eslint-plugin-prettier";
 
 export default tseslint.config(
     { ignores: ["dist"] },
@@ -46,7 +46,7 @@ export default tseslint.config(
                 "error",
                 {
                     files: ["scripts/header.txt"],
-                    templates: { author: [".*", "Vendicated and Vesktop contributors"] }
+                    templates: { author: [".*", "Vendicated and VCord contributors"] }
                 }
             ],
 

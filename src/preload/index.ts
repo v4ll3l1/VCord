@@ -1,5 +1,5 @@
 /*
- * Vesktop, a desktop app aiming to give you a snappier Discord Experience
+ * VCord, a desktop app aiming to give you a snappier Discord Experience
  * Copyright (c) 2023 Vendicated and Vencord contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -8,9 +8,11 @@ import { contextBridge, ipcRenderer, webFrame } from "electron";
 import { readFileSync, watch } from "fs";
 
 import { IpcEvents } from "../shared/IpcEvents";
+import { VCordNative } from "./VCordNative";
 import { VesktopNative } from "./VesktopNative";
 
 contextBridge.exposeInMainWorld("VesktopNative", VesktopNative);
+contextBridge.exposeInMainWorld("VCordNative", VCordNative);
 
 require(ipcRenderer.sendSync(IpcEvents.GET_VENCORD_PRELOAD_FILE));
 
