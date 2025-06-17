@@ -11,6 +11,7 @@ import { IpcEvents } from "../shared/IpcEvents";
 import { VCordNative } from "./VCordNative";
 import { VesktopNative } from "./VesktopNative";
 
+// TODO: try find a way to only need one native thing
 contextBridge.exposeInMainWorld("VesktopNative", VesktopNative);
 contextBridge.exposeInMainWorld("VCordNative", VCordNative);
 

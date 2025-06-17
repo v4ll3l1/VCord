@@ -5,7 +5,8 @@
  */
 
 declare global {
-    export var VesktopNative: typeof import("preload/VesktopNative").VesktopNative;
+    // TODO: try find a way to only need one native thing
+    export var VesktopNative: typeof import("preload/VCordNative").VCordNative;
     export var VCordNative: typeof import("preload/VCordNative").VCordNative;
     export var VCord: typeof import("renderer/index");
     export var VCordPatchGlobals: any;

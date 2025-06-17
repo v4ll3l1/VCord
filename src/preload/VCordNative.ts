@@ -26,6 +26,7 @@ let onDevtoolsClose = () => {};
 ipcRenderer.on(IpcEvents.DEVTOOLS_OPENED, () => onDevtoolsOpen());
 ipcRenderer.on(IpcEvents.DEVTOOLS_CLOSED, () => onDevtoolsClose());
 
+// TODO: try find a way to only need one native thing
 export const VCordNative = {
     app: {
         relaunch: () => invoke<void>(IpcEvents.RELAUNCH),
